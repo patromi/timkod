@@ -1,111 +1,100 @@
 import random
 
-def generate_line(base_string, length, len_to_use = 27):
-    base_string = base_string[:len_to_use]
-    letters = {}
-    for l in base_string:
-        for letter in l:
-            if letter in letters:
-                letters[letter] += 1
-            else:
-                letters[letter] = 1
-    
-    letters = dict(sorted(letters.items(), key=lambda item: item[1], reverse=True))
-    probability_of_letters = {}
-    for letter in letters:
-        probability_of_letters[letter] = letters[letter] / len(base_string)
-    return random.choices(list(probability_of_letters.keys()), list(probability_of_letters.values()), k=length)
 
-def show_line_stats(line):  
-    words = line.split()
-    print("Number of words:", len(words))
-    length_of_words = 0
-    for word in words:
-        length_of_words += len(word)
-    print(f"Summary length of words: {length_of_words}")
-    print(f"Average length of words: {length_of_words / len(words)}\n")
+def get_char_freqs(text, out_len, limit=27):
+    text = text[:limit]
+    counts = {}
+    for char in text:
+        counts[char] = counts.get(char, 0) + 1
+
+    sorted_counts = dict(sorted(counts.items(), key=lambda x: x[1], reverse=True))
+    probs = {k: v / len(text) for k, v in sorted_counts.items()}
+
+    result = random.choices(
+        list(probs.keys()),
+        list(probs.values()),
+        k=out_len
+    )
+    return "".join(result)
 
 
-def build_markov_model(text, order):
-    """
-    Buduje model Markova n-tego rzędu z wykorzystaniem standardowych słowników.
-    """
-    model = {}
-    for i in range(len(text) - order):
-        state = text[i:i+order]
-        next_char = text[i+order]
-        
-        if state not in model:
-            model[state] = []
-            
-        model[state].append(next_char)
-    return model
+def print_text_info(text):
+    words = text.split()
+    if not words:
+        return
+    w_count = len(words)
+    total_chars = sum(len(w) for w in words)
 
-def generate_markov_text(model, order, length, seed=None):
-    """
-    Generuje tekst na podstawie wbudowanego słownika modelu.
-    """
-    if seed is None:
-        current_state = random.choice(list(model.keys()))
-        generated = current_state
+    print(f"Words count: {w_count}")
+    print(f"Total chars in words: {total_chars}")
+    print(f"Avg word length: {round(total_chars / w_count, 2)}\n")
+
+
+def make_model(data, step):
+    m = {}
+    for i in range(len(data) - step):
+        chunk = data[i:i + step]
+        nxt = data[i + step]
+        if chunk not in m:
+            m[chunk] = []
+        m[chunk].append(nxt)
+    return m
+
+
+def run_markov(m, step, length, start_word=None):
+    if start_word is None:
+        current = random.choice(list(m.keys()))
+        out_text = current
     else:
-        generated = seed
-        
-    while len(generated) < length:
-        current_state = generated[-order:]
-        
-        if current_state in model:
-            next_char = random.choice(model[current_state])
-            generated += next_char
+        out_text = start_word
+
+    while len(out_text) < length:
+        tail = out_text[-step:]
+        if tail in m:
+            out_text += random.choice(m[tail])
         else:
-            current_state = random.choice(list(model.keys()))
-            generated += current_state
-            
-    return generated[:length]
+            out_text += random.choice(list(m.keys()))
+
+    return out_text[:length]
 
 
-def main():
-    # generator przyblizenia zerowego rzedu
-    print("==============Zero-order approximation:")
-    random_line = generate_line('abcdefghijklmnopqrstuvwxyz ', 50, 27)
-    print("Generated line:", "".join(random_line))
-    show_line_stats("".join(random_line))
+def run():
+    print("--- Level 0 ---")
+    alphabet = "abcdefghijklmnopqrstuvwxyz "
+    t0 = get_char_freqs(alphabet, 50)
+    print("Output:", t0)
+    print_text_info(t0)
 
-    with open("data/norm_wiki_sample.txt", "r", encoding="utf-8") as f:
-        line = f.read()[:50000]
+    try:
+        with open("data/norm_wiki_sample.txt", "r", encoding="utf-8") as file:
+            source_data = file.read()[:50000]
+    except FileNotFoundError:
+        print("Error: File not found.")
+        return
 
-    # generator przyblizenia pierwszego rzedu
-    print("==============Your Original Function on loaded text:")
-    random_line_orig = generate_line(line, 50, 20000)
-    print("Generated line:", "".join(random_line_orig))
-    show_line_stats("".join(random_line_orig))
+    print("--- Loaded text stats ---")
+    t1 = get_char_freqs(source_data, 50, 20000)
+    print("Output:", t1)
+    print_text_info(t1)
 
-    # Wzorowy tekst
-    print("==============Original line:")
-    show_line_stats(line)
+    print("--- Markov level 1 ---")
+    mod1 = make_model(source_data, 1)
+    res1 = run_markov(mod1, 1, 200)
+    print("Output:", res1)
+    print_text_info(res1)
 
-    gen_length = 200
+    print("--- Markov level 3 ---")
+    mod3 = make_model(source_data, 3)
+    res3 = run_markov(mod3, 3, 200)
+    print("Output:", res3)
+    print_text_info(res3)
 
-    # Przybliżenie pierwszego rzędu 
-    print("==============1st-order Markov approximation:")
-    model_1 = build_markov_model(line, 1)
-    random_line_1 = generate_markov_text(model_1, 1, gen_length)
-    print("Generated line:", random_line_1)
-    show_line_stats(random_line_1)
+    print("--- Markov level 5 (start word) ---")
+    mod5 = make_model(source_data, 5)
+    res5 = run_markov(mod5, 5, 200, start_word="probability")
+    print("Output:", res5)
+    print_text_info(res5)
 
-    # Przybliżenie trzeciego rzędu
-    print("==============3rd-order Markov approximation:")
-    model_3 = build_markov_model(line, 3)
-    random_line_3 = generate_markov_text(model_3, 3, gen_length)
-    print("Generated line:", random_line_3)
-    show_line_stats(random_line_3)
-
-    # Przybliżenie piątego rzędu startujące od 'probability'
-    print("==============5th-order Markov approximation (start: 'probability'):")
-    model_5 = build_markov_model(line, 5)
-    random_line_5 = generate_markov_text(model_5, 5, gen_length, seed="probability")
-    print("Generated line:", random_line_5)
-    show_line_stats(random_line_5)
 
 if __name__ == "__main__":
-    main()
+    run()
