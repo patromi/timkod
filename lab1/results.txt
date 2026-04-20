@@ -1,0 +1,34 @@
+Zero-order approximation:
+Generated line: epficsslsdmzfljqvtcbzvtsph jhzp leektyy xjvtskrecn
+Number of words: 4
+Summary length of words: 47
+Average length of words: 11.75
+
+First order approximation on loaded text:
+Generated line: eese dcud icaldioblntiwoeeichbott  hloeh lfec 8hab
+Number of words: 6
+Summary length of words: 44
+Average length of words: 7.333333333333333
+
+Original line:
+Number of words: 8366
+Summary length of words: 41634
+Average length of words: 4.976571838393498
+
+1st-order Markov approximation:
+Generated line: renavelipuby of ty pe t ity wanesasin ce mictomiesc f wrlulathinathaldig umphepld ery f thoto calatrad s by pr ome aeeon deducheed abery pels ti inderereredimintiee g 904 andicte d siequswaf 19 ong ls
+Number of words: 34
+Summary length of words: 167
+Average length of words: 4.911764705882353
+
+3rd-order Markov approximation:
+Generated line:  writions with spentilled and insect 1961 election of judied to the gene but at from the the 2000 been bt grieg whenetic orduffic official a channeration orch secuties own is no the gove puty cation t
+Number of words: 36
+Summary length of words: 164
+Average length of words: 4.555555555555555
+
+5th-order Markov approximation (start: 'probability'):
+Generated line: probability that conclude the generals social statement pollen framework governorates confirmed its population dollars i do nt make me the products included the nuts 3 dublin regions india that is a g
+Number of words: 32
+Summary length of words: 169
+Average length of words: 5.28125

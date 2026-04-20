@@ -66,7 +66,7 @@ def generate_markov_text(model, order, length, seed=None):
 
 def main():
     # generator przyblizenia zerowego rzedu
-    print("==============Zero-order approximation:")
+    print("Zero-order approximation:")
     random_line = generate_line('abcdefghijklmnopqrstuvwxyz ', 50, 27)
     print("Generated line:", "".join(random_line))
     show_line_stats("".join(random_line))
@@ -75,33 +75,33 @@ def main():
         line = f.read()[:50000]
 
     # generator przyblizenia pierwszego rzedu
-    print("==============Your Original Function on loaded text:")
+    print("First order approximation on loaded text:")
     random_line_orig = generate_line(line, 50, 20000)
     print("Generated line:", "".join(random_line_orig))
     show_line_stats("".join(random_line_orig))
 
     # Wzorowy tekst
-    print("==============Original line:")
+    print("Original line:")
     show_line_stats(line)
 
     gen_length = 200
 
     # Przybliżenie pierwszego rzędu 
-    print("==============1st-order Markov approximation:")
+    print("1st-order Markov approximation:")
     model_1 = build_markov_model(line, 1)
     random_line_1 = generate_markov_text(model_1, 1, gen_length)
     print("Generated line:", random_line_1)
     show_line_stats(random_line_1)
 
     # Przybliżenie trzeciego rzędu
-    print("==============3rd-order Markov approximation:")
+    print("3rd-order Markov approximation:")
     model_3 = build_markov_model(line, 3)
     random_line_3 = generate_markov_text(model_3, 3, gen_length)
     print("Generated line:", random_line_3)
     show_line_stats(random_line_3)
 
     # Przybliżenie piątego rzędu startujące od 'probability'
-    print("==============5th-order Markov approximation (start: 'probability'):")
+    print("5th-order Markov approximation (start: 'probability'):")
     model_5 = build_markov_model(line, 5)
     random_line_5 = generate_markov_text(model_5, 5, gen_length, seed="probability")
     print("Generated line:", random_line_5)
