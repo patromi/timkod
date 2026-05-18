@@ -1,0 +1,186 @@
+Językiem naturalnym są próbki zawarte w plikach: sample0.txt, sample1.txt, sample2.txt, sample3.txt
+
+Próbka w pliku sample4.txt nie jest językiem naturalnym, ponieważ entropia znaków praktycznie nie spada przez pierwsze 3 rzędy, poza tym entropia słów spada zbyt mocno 
+Próbka w plik sample5.txt nie jest językiem natualrnym, ponieważ entropia słów spada pomiędzy 1., a 2. rzędem z 15 do 0.
+
+Plik: data\norm_wiki_en.txt
+Entropia znaków:
+  Rząd 0: 4.2656 bitów/znak
+  Rząd 1: 3.4786 bitów/znak
+  Rząd 2: 2.8635 bitów/znak
+  Rząd 3: 2.1215 bitów/znak
+  Rząd 4: 1.5033 bitów/znak
+  Rząd 5: 1.0639 bitów/znak
+Entropia słów:
+  Rząd 0: 10.5084 bitów/słowo
+  Rząd 1: 4.1097 bitów/słowo
+  Rząd 2: 0.8457 bitów/słowo
+  Rząd 3: 0.1086 bitów/słowo
+
+Plik: data\norm_wiki_eo.txt
+Entropia znaków:
+  Rząd 0: 4.1259 bitów/znak
+  Rząd 1: 3.2581 bitów/znak
+  Rząd 2: 2.7083 bitów/znak
+  Rząd 3: 2.0700 bitów/znak
+  Rząd 4: 1.5502 bitów/znak
+  Rząd 5: 1.1695 bitów/znak
+Entropia słów:
+  Rząd 0: 10.0865 bitów/słowo
+  Rząd 1: 4.2415 bitów/słowo
+  Rząd 2: 1.0707 bitów/słowo
+  Rząd 3: 0.1677 bitów/słowo
+
+Plik: data\norm_wiki_et.txt
+Entropia znaków:
+  Rząd 0: 4.1714 bitów/znak
+  Rząd 1: 3.4855 bitów/znak
+  Rząd 2: 3.0373 bitów/znak
+  Rząd 3: 2.3211 bitów/znak
+  Rząd 4: 1.6134 bitów/znak
+  Rząd 5: 1.0906 bitów/znak
+Entropia słów:
+  Rząd 0: 12.3954 bitów/słowo
+  Rząd 1: 2.9367 bitów/słowo
+  Rząd 2: 0.2422 bitów/słowo
+  Rząd 3: 0.0232 bitów/słowo
+
+Plik: data\norm_wiki_ht.txt
+Entropia znaków:
+  Rząd 0: 4.1368 bitów/znak
+  Rząd 1: 3.2407 bitów/znak
+  Rząd 2: 2.7154 bitów/znak
+  Rząd 3: 2.0735 bitów/znak
+  Rząd 4: 1.4706 bitów/znak
+  Rząd 5: 1.0219 bitów/znak
+Entropia słów:
+  Rząd 0: 9.5289 bitów/słowo
+  Rząd 1: 3.9330 bitów/słowo
+  Rząd 2: 1.1020 bitów/słowo
+  Rząd 3: 0.3807 bitów/słowo
+
+Plik: data\norm_wiki_la.txt
+Entropia znaków:
+  Rząd 0: 4.1667 bitów/znak
+  Rząd 1: 3.4410 bitów/znak
+  Rząd 2: 2.9057 bitów/znak
+  Rząd 3: 2.2278 bitów/znak
+  Rząd 4: 1.5906 bitów/znak
+  Rząd 5: 1.0871 bitów/znak
+Entropia słów:
+  Rząd 0: 11.8986 bitów/słowo
+  Rząd 1: 3.0577 bitów/słowo
+  Rząd 2: 0.3946 bitów/słowo
+  Rząd 3: 0.0949 bitów/słowo
+
+Plik: data\norm_wiki_nv.txt
+Entropia znaków:
+  Rząd 0: 3.9102 bitów/znak
+  Rząd 1: 3.0838 bitów/znak
+  Rząd 2: 2.5301 bitów/znak
+  Rząd 3: 1.9238 bitów/znak
+  Rząd 4: 1.4040 bitów/znak
+  Rząd 5: 1.0274 bitów/znak
+Entropia słów:
+  Rząd 0: 9.8554 bitów/słowo
+  Rząd 1: 3.7350 bitów/słowo
+  Rząd 2: 1.2089 bitów/słowo
+  Rząd 3: 0.4227 bitów/słowo
+
+Plik: data\norm_wiki_so.txt
+Entropia znaków:
+  Rząd 0: 4.0426 bitów/znak
+  Rząd 1: 3.2846 bitów/znak
+  Rząd 2: 2.7318 bitów/znak
+  Rząd 3: 2.1226 bitów/znak
+  Rząd 4: 1.5734 bitów/znak
+  Rząd 5: 1.1395 bitów/znak
+Entropia słów:
+  Rząd 0: 10.7358 bitów/słowo
+  Rząd 1: 3.8166 bitów/słowo
+  Rząd 2: 0.8353 bitów/słowo
+  Rząd 3: 0.1570 bitów/słowo
+
+Plik: samples\sample0.txt
+Entropia znaków:
+  Rząd 0: 4.2696 bitów/znak
+  Rząd 1: 2.9105 bitów/znak
+  Rząd 2: 1.9904 bitów/znak
+  Rząd 3: 1.5032 bitów/znak
+  Rząd 4: 1.2993 bitów/znak
+  Rząd 5: 1.1457 bitów/znak
+Entropia słów:
+  Rząd 0: 7.7196 bitów/słowo
+  Rząd 1: 6.2648 bitów/słowo
+  Rząd 2: 1.5767 bitów/słowo
+  Rząd 3: 0.0480 bitów/słowo
+
+Plik: samples\sample1.txt
+Entropia znaków:
+  Rząd 0: 4.0433 bitów/znak
+  Rząd 1: 3.1643 bitów/znak
+  Rząd 2: 2.7931 bitów/znak
+  Rząd 3: 2.1910 bitów/znak
+  Rząd 4: 1.5851 bitów/znak
+  Rząd 5: 1.1325 bitów/znak
+Entropia słów:
+  Rząd 0: 10.8270 bitów/słowo
+  Rząd 1: 3.9082 bitów/słowo
+  Rząd 2: 0.7165 bitów/słowo
+  Rząd 3: 0.1107 bitów/słowo
+
+Plik: samples\sample2.txt
+Entropia znaków:
+  Rząd 0: 3.9906 bitów/znak
+  Rząd 1: 3.0468 bitów/znak
+  Rząd 2: 2.4615 bitów/znak
+  Rząd 3: 1.9129 bitów/znak
+  Rząd 4: 1.6059 bitów/znak
+  Rząd 5: 1.3743 bitów/znak
+Entropia słów:
+  Rząd 0: 8.0009 bitów/słowo
+  Rząd 1: 5.7397 bitów/słowo
+  Rząd 2: 1.6798 bitów/słowo
+  Rząd 3: 0.1822 bitów/słowo
+
+Plik: samples\sample3.txt
+Entropia znaków:
+  Rząd 0: 3.9276 bitów/znak
+  Rząd 1: 3.1895 bitów/znak
+  Rząd 2: 2.6118 bitów/znak
+  Rząd 3: 1.9377 bitów/znak
+  Rząd 4: 1.3780 bitów/znak
+  Rząd 5: 1.0621 bitów/znak
+Entropia słów:
+  Rząd 0: 8.7433 bitów/słowo
+  Rząd 1: 5.0067 bitów/słowo
+  Rząd 2: 1.2983 bitów/słowo
+  Rząd 3: 0.4091 bitów/słowo
+
+Plik: samples\sample4.txt
+Entropia znaków:
+  Rząd 0: 4.2515 bitów/znak
+  Rząd 1: 4.2232 bitów/znak
+  Rząd 2: 4.1338 bitów/znak
+  Rząd 3: 3.4294 bitów/znak
+  Rząd 4: 1.6005 bitów/znak
+  Rząd 5: 0.2695 bitów/znak
+Entropia słów:
+  Rząd 0: 13.8203 bitów/słowo
+  Rząd 1: 1.7456 bitów/słowo
+  Rząd 2: 0.0436 bitów/słowo
+  Rząd 3: 0.0000 bitów/słowo
+
+Plik: samples\sample5.txt
+Entropia znaków:
+  Rząd 0: 4.4380 bitów/znak
+  Rząd 1: 3.5196 bitów/znak
+  Rząd 2: 3.2250 bitów/znak
+  Rząd 3: 2.6761 bitów/znak
+  Rząd 4: 1.8143 bitów/znak
+  Rząd 5: 1.0573 bitów/znak
+Entropia słów:
+  Rząd 0: 15.6096 bitów/słowo
+  Rząd 1: -0.0000 bitów/słowo
+  Rząd 2: -0.0000 bitów/słowo
+  Rząd 3: -0.0000 bitów/słowo
