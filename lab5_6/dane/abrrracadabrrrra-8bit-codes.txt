@@ -1,0 +1,6 @@
+znak ASCII kod-8bit dlugosc-kodu-8bit liczba-wystąpień
+a 097 01100001 8 5
+b 098 01100010 8 2
+r 114 01110010 8 7
+c 099 01100011 8 1
+d 100 01100100 8 1

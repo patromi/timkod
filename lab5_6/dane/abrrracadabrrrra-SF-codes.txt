@@ -1,0 +1,6 @@
+znak ASCII kod-SF dlugosc-kodu-SF liczba-wystąpień
+r 114 0 1 7
+a 097 10 2 5
+b 098 110 3 2
+c 099 1110 4 1
+d 100 1111 4 1
